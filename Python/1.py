@@ -17,4 +17,4 @@ print(f"Day2_Sunny:{day2_sunny:.0%}, Rainy:{day2_rainy:.0%}")
 
 # f means format.
 
-#hello
+# this is a test

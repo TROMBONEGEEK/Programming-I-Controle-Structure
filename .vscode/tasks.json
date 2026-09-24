@@ -4,11 +4,16 @@
         {
             "label": "Start GitHub Auto Sync",
             "type": "shell",
-            "command": "powershell -ExecutionPolicy Bypass -File \"${workspaceFolder}\\auto-sync.ps1\"",
+            "command": "powershell.exe",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\auto-sync.ps1"
+            ],
             "isBackground": true,
             "runOptions": {
-                "runOn": "folderOpen",
-                "reevaluateOnRerun": true
+                "runOn": "folderOpen"
             },
             "problemMatcher": []
         }

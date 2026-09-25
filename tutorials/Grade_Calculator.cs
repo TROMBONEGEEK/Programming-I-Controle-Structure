@@ -36,10 +36,18 @@ Status        : Passed
 */
 
 using System;
+using System.Reflection.Metadata;
 
 class Grades
 {
+static void Main()
+{
     string nameInput = InputCollector.Ask("Please Enter Your Name: ");
     string scoreInput = InputCollector.Ask("Please Enter your Score: ");
+    
+    User name = new User(nameInput, scoreInput);
+
+    Console.WriteLine($"\nSuccessfully added name: {name.name} ({name.score})"); 
+}
 }
 

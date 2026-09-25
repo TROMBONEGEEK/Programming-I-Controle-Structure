@@ -35,3 +35,5 @@ Status        : Passed
 --------------------------------
 */
 
+Console.WriteLine("Please Enter Your Name: ");
+Console.WriteLine("Please Enter your Score:");

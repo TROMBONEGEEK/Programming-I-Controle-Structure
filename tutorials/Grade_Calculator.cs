@@ -35,29 +35,11 @@ Status        : Passed
 --------------------------------
 */
 
+using System;
 
-Console.Write("Please Enter Your Name: ");
-Console.Write("Please Enter your Score: ");
-
-Console.WriteLine("Hello, World!");
-
-namespace YourNamespace
+class Grades
 {
-    class YourClass
-    {
-    }
-
-    struct YourStruct
-    {
-    }
-
-    interface IYourInterface
-    {
-    }
-
-    delegate int YourDelegate();
-
-    enum YourEnum
-    {
-    }
+    string nameInput = InputCollector.Ask("Please Enter Your Name: ");
+    string scoreInput = InputCollector.Ask("Please Enter your Score: ");
 }
+

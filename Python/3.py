@@ -12,5 +12,3 @@ def do_four(function, a):
 
 do_four(print_twice, 'spam')
 
-
-#Hello

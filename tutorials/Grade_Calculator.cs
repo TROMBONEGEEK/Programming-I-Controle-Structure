@@ -35,5 +35,29 @@ Status        : Passed
 --------------------------------
 */
 
+
 Console.Write("Please Enter Your Name: ");
-Console.Write("Please Enter your Score:");
+Console.Write("Please Enter your Score: ");
+
+Console.WriteLine("Hello, World!");
+
+namespace YourNamespace
+{
+    class YourClass
+    {
+    }
+
+    struct YourStruct
+    {
+    }
+
+    interface IYourInterface
+    {
+    }
+
+    delegate int YourDelegate();
+
+    enum YourEnum
+    {
+    }
+}

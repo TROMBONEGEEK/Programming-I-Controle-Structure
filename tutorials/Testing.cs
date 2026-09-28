@@ -44,4 +44,10 @@ class Code
             (false, true) => true,
             (false, false) => false,
         };
+    public static bool ReducedAnd(bool left, bool right) =>
+        (left, right) switch
+        {
+            (true, true) => true,
+            (_, _) => false,
+        };
 }

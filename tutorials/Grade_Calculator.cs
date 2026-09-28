@@ -63,11 +63,11 @@ static class InputCollector
 class user
 {
     public string Name{get; set;}
-    public string Role{get; set;}
+    public string Score{get; set;}
 
-    public user(string name, string role)
+    public user(string name, string score)
     {
         Name = name;
-        Role = role;
+        Score = score;
     }
 }

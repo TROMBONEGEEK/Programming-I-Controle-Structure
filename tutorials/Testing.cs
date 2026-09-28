@@ -1,21 +1,10 @@
-Console.WriteLine("Hello, WOrld!");
-namespace Yournamespace
+using System;
+namespace TourOfCsharp;
+
+class Program
 {
-    class YourClass
+    static void Main()
     {
-    }
-
-    struct YourStruct
-    {
-    }
-
-    interface IYourInterface
-    {
-    }
-
-    delegate int YourDelegate();
-
-    enum YourEnum
-    {
+        Console.WriteLine("Hello, World");
     }
 }

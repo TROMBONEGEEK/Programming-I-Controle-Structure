@@ -51,3 +51,7 @@ static void Main()
 }
 }
 
+static class InputCollector
+{
+public static string Ask(string prompt)
+{

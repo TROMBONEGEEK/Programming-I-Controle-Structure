@@ -51,10 +51,7 @@ class Grades
         int scienceScore = int.Parse(Console.ReadLine());
         Console.Write("Please enter your English score (0-100): ");
         int englishScore = int.Parse(Console.ReadLine());
-    }
 
-    static void Main()
-    {
-        
+        int totalScore = mathScore + scienceScore + englishScore;
     }
 }

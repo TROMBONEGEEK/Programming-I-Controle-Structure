@@ -42,7 +42,9 @@ class Grades
 {
     static void Main()
     {
-        string nameInput = InputCollector.Ask("Please Enter Your Name: ");
-        string scoreInput = InputCollector.Ask("Please Enter your Score: ");
+        Console.Write("Please Enter Your Name: ");
+        string nameInput = Console.ReadLine();
+        Console.Write("Please Enter Your Class Score (0-100): ");
+        int mathScore = int.Parse(Console.ReadLine());
     }
 }

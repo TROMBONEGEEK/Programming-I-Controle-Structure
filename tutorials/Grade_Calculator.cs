@@ -42,9 +42,13 @@ class Grades
 {
     static void Main()
     {
-        Console.Write("Please Enter Your Name: ");
+        Console.Write("Please enter your name: ");
         string nameInput = Console.ReadLine();
-        Console.Write("Please Enter Your Class Score (0-100): ");
+        Console.Write("Please enter your Math score (0-100): ");
         int mathScore = int.Parse(Console.ReadLine());
+        Console.Write("Please enter your Science score (0-100) ");
+        int scienceScore = int.Parse(Console.ReadLine());
+        Console.Write("Please enter your English score");
+        int englishScore = int.Parse(Console.ReadLine());
     }
 }

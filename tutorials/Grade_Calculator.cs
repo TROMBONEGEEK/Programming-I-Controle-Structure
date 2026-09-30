@@ -53,5 +53,6 @@ class Grades
         int englishScore = int.Parse(Console.ReadLine());
 
         int totalScore = mathScore + scienceScore + englishScore;
+        double
     }
 }

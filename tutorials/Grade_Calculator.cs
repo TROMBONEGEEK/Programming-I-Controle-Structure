@@ -53,6 +53,9 @@ class Grades
         int englishScore = int.Parse(Console.ReadLine());
 
         int totalScore = mathScore + scienceScore + englishScore;
-        double
+        double averageScore = totalScore / 3.00;
+
+        Console.WriteLine($"Total: {totalScore}");
+        Console.WriteLine($"Average: {averageScore:F2}")
     }
 }

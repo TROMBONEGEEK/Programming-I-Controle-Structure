@@ -44,30 +44,5 @@ class Grades
     {
         string nameInput = InputCollector.Ask("Please Enter Your Name: ");
         string scoreInput = InputCollector.Ask("Please Enter your Score: ");
-    
-        User name = new User(nameInput, scoreInput);
-
-        Console.WriteLine($"\nSuccessfully added name: {name.name} ({name.score})"); 
-    }
-}
-
-static class InputCollector
-{
-    public static string Ask(string prompt)
-    {
-        Console.Write(prompt);
-        return Console.ReadLine();
-    }
-}
-
-class user
-{
-    public string Name{get; set;}
-    public string Score{get; set;}
-
-    public user(string name, string score)
-    {
-        Name = name;
-        Score = score;
     }
 }

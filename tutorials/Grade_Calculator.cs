@@ -59,6 +59,12 @@ class Grades
         Console.WriteLine($"Total: {totalScore}");
         Console.WriteLine($"Average: {averageScore:F2}%");
 
+        // This will determine the letter grade based on the average score.
+        string LetterGrade;
+        if(averageScore >= 90 && averageScore <= 100);
+        {
+            LetterGrade = "A";
+        }
 
     }
 }

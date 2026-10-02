@@ -59,6 +59,8 @@ class Grades
         Console.WriteLine($"Total: {totalScore}");
         Console.WriteLine($"Average: {averageScore:F2}%");
 
+        Console.WriteLine("-" * 40);
+
         // This will determine the letter grade based on the average score.
         string LetterGrade;
         if(averageScore >= 90 && averageScore <= 100);
@@ -66,5 +68,47 @@ class Grades
             LetterGrade = "A";
         }
 
+        elseif(averageScore >= 80 && averageScore <= 89);
+        {
+            LetterGrade = "B";
+        }
+
+        elseif(averageScore >= 70 && averageScore <= 79);
+        {
+            LetterGrade = "C";
+        }
+
+        elseif(averageScore >= 60 && averageScore <= 69);
+        {
+            LetterGrade = "D";
+        }
+
+        elseif(averageScore <= 59);
+        {
+            LetterGrade = "F";
+        }
+
+        string FinalReport;
+        Console.WriteLine($"
+
     }
 }
+
+/*
+​Student's Name
+​Average Score (formatted to 2 decimal places)
+​Final Letter Grade
+​Status message: If the average is 70 or higher, output "Status: Passed"; otherwise, output "Status: Needs Improvement". 
+=== Student Grade Calculator ===
+Enter student name: Alex
+Enter Math score (0-100): 88
+Enter Science score (0-100): 92
+Enter English score (0-100): 79
+--------------------------------
+ACADEMIC REPORT FOR ALEX
+--------------------------------
+Average Score : 86.33%
+Letter Grade  : B
+Status        : Passed
+--------------------------------
+*/

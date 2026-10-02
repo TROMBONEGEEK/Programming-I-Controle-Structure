@@ -59,8 +59,8 @@ class Grades
         Console.WriteLine($"Total: {totalScore}");
         Console.WriteLine($"Average: {averageScore:F2}%");
 
-        string Line = new string("-", 40);
-        Console.WriteLine(Line);
+        string line = new string('-', 40);
+        Console.WriteLine(line);
 
         // This will determine the letter grade based on the average score.
         string LetterGrade;

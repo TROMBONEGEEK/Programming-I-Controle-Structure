@@ -55,8 +55,10 @@ class Grades
         int totalScore = mathScore + scienceScore + englishScore;
         double averageScore = totalScore / 3.00000;
 
-        Console.WriteLine($"{nameInput} has achieved a total score of {totalScore} and an average score of {averageScore:F2}");
+        Console.WriteLine($"{nameInput} has achieved a total score of {totalScore} and an average score of {averageScore:F2}%");
         Console.WriteLine($"Total: {totalScore}");
-        Console.WriteLine($"Average: {averageScore:F2}");
+        Console.WriteLine($"Average: {averageScore:F2}%");
+
+
     }
 }

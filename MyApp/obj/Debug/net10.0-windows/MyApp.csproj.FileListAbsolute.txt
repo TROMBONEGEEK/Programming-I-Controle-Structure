@@ -1,0 +1,15 @@
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\bin\Debug\net10.0-windows\MyApp.exe
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\bin\Debug\net10.0-windows\MyApp.deps.json
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\bin\Debug\net10.0-windows\MyApp.runtimeconfig.json
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\bin\Debug\net10.0-windows\MyApp.dll
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\bin\Debug\net10.0-windows\MyApp.pdb
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\MyApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\MyApp.AssemblyInfoInputs.cache
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\MyApp.AssemblyInfo.cs
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\MyApp.csproj.CoreCompileInputs.cache
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\MyApp.sourcelink.json
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\MyApp.dll
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\refint\MyApp.dll
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\MyApp.pdb
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\MyApp.genruntimeconfig.cache
+C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\MyApp\obj\Debug\net10.0-windows\ref\MyApp.dll

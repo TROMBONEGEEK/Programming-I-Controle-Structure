@@ -31,8 +31,16 @@ partial class Form1
         components = new System.ComponentModel.Container();
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
-        Text = "Form1";
+        Text = "Homework Time Tracker";
+
+        Label welcomeLabel = new Label();
+        welcomeLabel.Text = "Welcome to my application!";
+        welcomeLabel.AutoSize = true;
+        welcomeLabel.Location = new Point(30, 30);
+
+        Controls.Add(welcomeLabel);
     }
+        
 
     #endregion
 }

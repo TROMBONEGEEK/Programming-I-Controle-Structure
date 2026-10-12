@@ -8,7 +8,8 @@
     "net10.0-windows": []
   },
   "packageFolders": {
-    "C:\\Users\\wpilo\\.nuget\\packages\\": {}
+    "C:\\Users\\wpilo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -19,13 +20,19 @@
       "packagesPath": "C:\\Users\\wpilo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\wpilo\\OneDrive - Bethel University\\Computer Science Classes\\2026 Junior Year\\Program I\\MyApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\wpilo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\wpilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

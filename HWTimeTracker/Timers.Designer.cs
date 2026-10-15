@@ -30,20 +30,57 @@ namespace Names
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Timers));
+            Close = new Button();
+            Minimize = new Button();
+            SuspendLayout();
+            // 
+            // Close
+            // 
+            Close.BackColor = Color.Red;
+            Close.Location = new Point(1063, 10);
+            Close.Name = "Close";
+            Close.Size = new Size(51, 35);
+            Close.TabIndex = 0;
+            Close.Text = "X";
+            Close.UseVisualStyleBackColor = false;
+            Close.Click += Close_Click;
+            // 
+            // Minimize
+            // 
+            Minimize.BackColor = Color.LightSlateGray;
+            Minimize.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            Minimize.ForeColor = SystemColors.Desktop;
+            Minimize.Location = new Point(1007, 10);
+            Minimize.Name = "Minimize";
+            Minimize.Size = new Size(51, 35);
+            Minimize.TabIndex = 1;
+            Minimize.Text = "-";
+            Minimize.UseVisualStyleBackColor = false;
+            Minimize.Click += Timers_Activated;
             // 
             // Timers
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ControlDarkDark;
+            ClientSize = new Size(1125, 250);
+            Controls.Add(Minimize);
+            Controls.Add(Close);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Location = new Point(1920, 1020);
             Name = "Timers";
             Text = "Timers";
+            TopMost = true;
             Activated += Timers_Activated;
+            Load += Timers_Load;
             ResumeLayout(false);
-
-            // this.Location = new Point(30, 200);
-            this.Anchor = ((AnchorStyles)(AnchorStyles.Bottom | AnchorStyles.Right));
         }
         #endregion
+
+        private Button Close;
+        private Button Minimize;
     }
 }

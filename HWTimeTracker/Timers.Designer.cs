@@ -1,4 +1,6 @@
-﻿namespace Names
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Names
 {
     partial class Timers
     {
@@ -38,8 +40,10 @@
             Text = "Timers";
             Activated += Timers_Activated;
             ResumeLayout(false);
-        }
 
+            // this.Location = new Point(30, 200);
+            this.Anchor = ((AnchorStyles)(AnchorStyles.Bottom | AnchorStyles.Right));
+        }
         #endregion
     }
 }

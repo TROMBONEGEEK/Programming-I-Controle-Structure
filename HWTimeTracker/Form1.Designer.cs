@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btnAdd = new Button();
             Names = new Label();
             lstNames = new ListBox();
@@ -84,12 +85,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(268, 180);
+            WindowState = FormWindowState.Maximized;
             Controls.Add(Timers);
             Controls.Add(txtName);
             Controls.Add(lstNames);
             Controls.Add(Names);
             Controls.Add(btnAdd);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Homework Time Tracker";
             Activated += Form1_Activated;

@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Drawing.Drawing2D;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Names
 {
@@ -38,9 +39,9 @@ namespace Names
             // Close
             // 
             Close.BackColor = Color.Red;
-            Close.Location = new Point(1063, 10);
+            Close.Location = new Point(690, 10);
             Close.Name = "Close";
-            Close.Size = new Size(51, 35);
+            Close.Size = new Size(50, 35);
             Close.TabIndex = 0;
             Close.Text = "X";
             Close.UseVisualStyleBackColor = false;
@@ -51,9 +52,9 @@ namespace Names
             Minimize.BackColor = Color.LightSlateGray;
             Minimize.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Minimize.ForeColor = SystemColors.Desktop;
-            Minimize.Location = new Point(1007, 10);
+            Minimize.Location = new Point(635, 10);
             Minimize.Name = "Minimize";
-            Minimize.Size = new Size(51, 35);
+            Minimize.Size = new Size(50, 35);
             Minimize.TabIndex = 1;
             Minimize.Text = "-";
             Minimize.UseVisualStyleBackColor = false;
@@ -64,7 +65,7 @@ namespace Names
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1125, 250);
+            ClientSize = new Size(750, 125);
             Controls.Add(Minimize);
             Controls.Add(Close);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold);

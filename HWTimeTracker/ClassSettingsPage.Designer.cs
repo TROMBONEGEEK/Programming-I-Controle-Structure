@@ -34,6 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.AppWorkspace;
             Name = "ClassSettingsPage";
             Size = new Size(586, 291);
             ResumeLayout(false);

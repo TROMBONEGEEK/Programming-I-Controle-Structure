@@ -34,6 +34,7 @@ namespace Names
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Timers));
             Close = new Button();
             Minimize = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // Close
@@ -60,12 +61,22 @@ namespace Names
             Minimize.UseVisualStyleBackColor = false;
             Minimize.Click += Timers_Activated;
             // 
+            // button1
+            // 
+            button1.Location = new Point(49, 55);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 2;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Timers
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(750, 125);
+            Controls.Add(button1);
             Controls.Add(Minimize);
             Controls.Add(Close);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold);
@@ -76,12 +87,12 @@ namespace Names
             Text = "Timers";
             TopMost = true;
             Activated += Timers_Activated;
-            Load += Timers_Load;
             ResumeLayout(false);
         }
         #endregion
 
         private Button Close;
         private Button Minimize;
+        private Button button1;
     }
 }

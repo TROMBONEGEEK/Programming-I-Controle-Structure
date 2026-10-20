@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>C:\Users\wpilo\OneDrive - Bethel University\Computer Science Classes\2026 Junior Year\Program I\HWTimeTracker\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="ClassSettingsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

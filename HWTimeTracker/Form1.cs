@@ -1,3 +1,4 @@
+using System.Diagnostics.Eventing.Reader;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Names
@@ -31,7 +32,7 @@ namespace Names
         private void Timers_Click(object sender, EventArgs e)
         {
             if (timersWindow == null)
-                // In this case, timersWindow = nothing, so we can open a Timers form.
+            // In this case, timersWindow = nothing, so we can open a Timers form.
             {
                 // Opens a Timers form.
                 timersWindow = new Timers();
@@ -43,6 +44,19 @@ namespace Names
 
                 timersWindow.Show();
             }
+        }
+
+        private ClassSettingsPage? settings;
+        private void classesButton_Click(object sender, EventArgs e)
+        {
+            if (settings == null)
+            {
+                settings = new ClassSettingsPage();
+            }
+
+            pagePanel.Controls.Clear();
+            settings.Dock = DockStyle.Fill;
+            pagePanel.Controls.Add(settings);
         }
     }
 }

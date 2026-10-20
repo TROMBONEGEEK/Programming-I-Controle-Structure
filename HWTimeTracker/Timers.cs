@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Names
 {
@@ -34,14 +36,10 @@ namespace Names
             }
         }
 
-        private void Timers_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Close_Click(object sender, EventArgs e)
         {
             Close();
         }
+        
     }
 }

@@ -39,6 +39,20 @@ namespace Names
             }
         }
 
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            if (appearanceSettings != null)
+            {
+                pagePanel.Controls.Clear();
+                appearanceSettings = null;
+            }
+            else if (settings != null)
+            {
+                pagePanel.Controls.Clear();
+                settings = null;
+            }
+        }
+
         private ClassSettingsPage? settings;
         private void classesButton_Click(object sender, EventArgs e)
         {
@@ -50,6 +64,20 @@ namespace Names
             pagePanel.Controls.Clear();
             settings.Dock = DockStyle.Fill;
             pagePanel.Controls.Add(settings);
+        }
+
+        private AppearanceSettingsPage? appearanceSettings;
+        private void appearanceButton_Click(object sender, EventArgs e)
+        {
+            if (appearanceSettings == null)
+            {
+                appearanceSettings = new AppearanceSettingsPage();
+            }
+
+            pagePanel.Controls.Clear();
+            appearanceSettings.Dock = DockStyle.Fill;
+            pagePanel.Controls.Add(appearanceSettings);
+
         }
     }
 }

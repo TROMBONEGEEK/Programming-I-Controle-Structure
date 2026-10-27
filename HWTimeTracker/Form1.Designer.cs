@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             navigationPanel = new Panel();
-            appearanceButton = new Button();
-            classesButton = new Button();
             homeButton = new Button();
+            classesButton = new Button();
+            appearanceButton = new Button();
             Timers = new Button();
             pagePanel = new Panel();
             navigationPanel.SuspendLayout();
@@ -42,25 +42,26 @@
             // navigationPanel
             // 
             navigationPanel.BackColor = SystemColors.ActiveCaption;
-            navigationPanel.BorderStyle = BorderStyle.Fixed3D;
-            navigationPanel.Controls.Add(appearanceButton);
-            navigationPanel.Controls.Add(classesButton);
+            navigationPanel.BorderStyle = BorderStyle.FixedSingle;
             navigationPanel.Controls.Add(homeButton);
+            navigationPanel.Controls.Add(classesButton);
+            navigationPanel.Controls.Add(appearanceButton);
             navigationPanel.Dock = DockStyle.Left;
             navigationPanel.Location = new Point(0, 0);
             navigationPanel.Name = "navigationPanel";
             navigationPanel.Size = new Size(250, 469);
             navigationPanel.TabIndex = 0;
             // 
-            // appearanceButton
+            // homeButton
             // 
-            appearanceButton.BackColor = Color.DarkOrange;
-            appearanceButton.Location = new Point(-2, 90);
-            appearanceButton.Name = "appearanceButton";
-            appearanceButton.Size = new Size(250, 40);
-            appearanceButton.TabIndex = 2;
-            appearanceButton.Text = "Appearance";
-            appearanceButton.UseVisualStyleBackColor = false;
+            homeButton.BackColor = Color.DarkOrange;
+            homeButton.Location = new Point(-2, -2);
+            homeButton.Name = "homeButton";
+            homeButton.Size = new Size(250, 40);
+            homeButton.TabIndex = 0;
+            homeButton.Text = "Home";
+            homeButton.UseVisualStyleBackColor = false;
+            homeButton.Click += homeButton_Click;
             // 
             // classesButton
             // 
@@ -73,19 +74,21 @@
             classesButton.UseVisualStyleBackColor = false;
             classesButton.Click += classesButton_Click;
             // 
-            // homeButton
+            // appearanceButton
             // 
-            homeButton.BackColor = Color.DarkOrange;
-            homeButton.Location = new Point(-2, -2);
-            homeButton.Name = "homeButton";
-            homeButton.Size = new Size(250, 40);
-            homeButton.TabIndex = 0;
-            homeButton.Text = "Home";
-            homeButton.UseVisualStyleBackColor = false;
+            appearanceButton.BackColor = Color.DarkOrange;
+            appearanceButton.Location = new Point(-2, 90);
+            appearanceButton.Name = "appearanceButton";
+            appearanceButton.Size = new Size(250, 40);
+            appearanceButton.TabIndex = 2;
+            appearanceButton.Text = "Appearance";
+            appearanceButton.UseVisualStyleBackColor = false;
+            appearanceButton.Click += appearanceButton_Click;
             // 
             // Timers
             // 
-            Timers.Location = new Point(865, 402);
+            Timers.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Timers.Location = new Point(615, 402);
             Timers.Name = "Timers";
             Timers.Size = new Size(100, 55);
             Timers.TabIndex = 4;
@@ -98,9 +101,9 @@
             pagePanel.BackColor = SystemColors.Control;
             pagePanel.Controls.Add(Timers);
             pagePanel.Dock = DockStyle.Fill;
-            pagePanel.Location = new Point(0, 0);
+            pagePanel.Location = new Point(250, 0);
             pagePanel.Name = "pagePanel";
-            pagePanel.Size = new Size(977, 469);
+            pagePanel.Size = new Size(727, 469);
             pagePanel.TabIndex = 5;
             // 
             // Form1
@@ -109,8 +112,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(977, 469);
-            Controls.Add(navigationPanel);
             Controls.Add(pagePanel);
+            Controls.Add(navigationPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Homework Time Tracker";

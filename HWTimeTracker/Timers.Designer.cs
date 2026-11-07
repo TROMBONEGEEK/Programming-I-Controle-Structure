@@ -33,13 +33,15 @@ namespace Names
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Timers));
             Close = new Button();
-            Minimize = new Button();
+            Minamize = new Button();
+            classTimersPanel = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // Close
             // 
+            Close.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Close.BackColor = Color.Red;
-            Close.Location = new Point(690, 10);
+            Close.Location = new Point(440, 10);
             Close.Name = "Close";
             Close.Size = new Size(50, 35);
             Close.TabIndex = 0;
@@ -47,26 +49,39 @@ namespace Names
             Close.UseVisualStyleBackColor = false;
             Close.Click += Close_Click;
             // 
-            // Minimize
+            // Minamize
             // 
-            Minimize.BackColor = Color.LightSlateGray;
-            Minimize.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            Minimize.ForeColor = SystemColors.Desktop;
-            Minimize.Location = new Point(635, 10);
-            Minimize.Name = "Minimize";
-            Minimize.Size = new Size(50, 35);
-            Minimize.TabIndex = 1;
-            Minimize.Text = "-";
-            Minimize.UseVisualStyleBackColor = false;
-            Minimize.Click += Timers_Activated;
+            Minamize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Minamize.BackColor = Color.LightSlateGray;
+            Minamize.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            Minamize.ForeColor = SystemColors.Desktop;
+            Minamize.Location = new Point(385, 10);
+            Minamize.Name = "Minamize";
+            Minamize.Size = new Size(50, 35);
+            Minamize.TabIndex = 1;
+            Minamize.Text = "-";
+            Minamize.UseVisualStyleBackColor = false;
+            Minamize.Click += Timers_Activated;
+            // 
+            // classTimersPanel
+            // 
+            classTimersPanel.AutoScroll = true;
+            classTimersPanel.Dock = DockStyle.Left;
+            classTimersPanel.FlowDirection = FlowDirection.TopDown;
+            classTimersPanel.Location = new Point(0, 0);
+            classTimersPanel.Name = "classTimersPanel";
+            classTimersPanel.Size = new Size(385, 350);
+            classTimersPanel.TabIndex = 2;
+            classTimersPanel.WrapContents = false;
             // 
             // Timers
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(750, 125);
-            Controls.Add(Minimize);
+            ClientSize = new Size(500, 350);
+            Controls.Add(classTimersPanel);
+            Controls.Add(Minamize);
             Controls.Add(Close);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             FormBorderStyle = FormBorderStyle.None;
@@ -77,10 +92,14 @@ namespace Names
             TopMost = true;
             Activated += Timers_Activated;
             ResumeLayout(false);
+            //
+            //
+            //
         }
         #endregion
 
         private Button Close;
-        private Button Minimize;
+        private Button Minamize;
+        private FlowLayoutPanel classTimersPanel;
     }
 }

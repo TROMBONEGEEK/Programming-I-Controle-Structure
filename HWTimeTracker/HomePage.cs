@@ -17,6 +17,7 @@ namespace Names
         {
             InitializeComponent();
 
+            CreateTimeDataTable();
             LoadLogs();
         }
 
@@ -35,6 +36,29 @@ namespace Names
 
                 timersWindow.Show();
             }
+        }
+        //
+        //
+        //
+        private void CreateTimeDataTable()
+        {
+            using var connection = new SqliteConnection("Data Source=TimeData.db");
+            connection.Open();
+
+            using var command = connection.CreateCommand();
+
+            command.CommandText = @"
+        CREATE TABLE IF NOT EXISTS TimeData
+        (
+            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            ClassName TEXT,
+            StartTime TEXT,
+            StopTime TEXT,
+            Duration TEXT,
+            Date TEXT
+        )";
+
+            command.ExecuteNonQuery();
         }
         //
         //
@@ -97,6 +121,9 @@ namespace Names
                 );
             }
         }
+
+
+
 
         private void HomePage_Load(object sender, EventArgs e)
         {

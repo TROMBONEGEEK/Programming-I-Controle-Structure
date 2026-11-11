@@ -1,4 +1,11 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using LiveChartsCore;
+using LiveChartsCore.Kernel;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
+using LiveChartsCore.SkiaSharpView.SKCharts;
+using LiveChartsCore.SkiaSharpView.WinForms;
+using Microsoft.Data.Sqlite;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +26,12 @@ namespace Names
 
             CreateTimeDataTable();
             LoadLogs();
-        }
 
+            LoadChart();
+        }
+        //
+        //
+        //
         private void Timers_Click(object sender, EventArgs e)
         {
             if (timersWindow == null)
@@ -121,10 +132,98 @@ namespace Names
                 );
             }
         }
+        //
+        //
+        //
+        public void LoadChart()
+        { 
+            using var connection = new SqliteConnection("Data Source=TimeData.db");
+            connection.Open();
 
+            using var command = connection.CreateCommand();
 
+            command.CommandText = @"
+                SELECT Classname, Duration
+                FROM TimeData";
 
+            var totals = new Dictionary<string, TimeSpan>();
 
+            using var reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string className = reader["ClassName"].ToString();
+                string durationText = reader["Duration"].ToString();
+
+                if (TimeSpan.TryParse(durationText, out TimeSpan duration))
+                {
+                    if (totals.ContainsKey(className))
+                    {
+                        totals[className] += duration;
+                    }
+                    else
+                    {
+                        totals[className] = duration;
+                    }
+                }
+            }
+            //
+            var values = new List<double>();
+            foreach (var total in totals.Values)
+            {
+                values.Add(total.TotalSeconds);
+            }
+            //
+            var classNames = totals.Keys.ToArray();
+            //
+            var columnSeries = new ColumnSeries<double>
+            {
+                Values = values
+            };
+            //
+            columnSeries.PointMeasured += OnPointMeasured;
+            cartesianChart.Series = [columnSeries];
+            cartesianChart.XAxes = new[]
+            {
+                new Axis
+                {
+                    Labels = classNames
+                }
+            };
+
+            cartesianChart.YAxes = new[]
+            {
+                new Axis
+                {
+                    Labeler = value =>
+                    {
+                        TimeSpan time = TimeSpan.FromSeconds(value);
+                        return time.ToString(@"hh\:mm\:ss");
+                    }
+                }
+            };
+        }
+        //
+        private void OnPointMeasured(ChartPoint point)
+        {
+            if (point.Context.Visual is null) return;
+            point.Context.Visual.Fill = GetPaint(point.Index);
+        }
+        //
+        private SolidColorPaint GetPaint(int index)
+        {
+            var paints = new SolidColorPaint[]
+            {
+                new(SKColors.Red),
+                new(SKColors.Green),
+                new(SKColors.Blue),
+                new(SKColors.Yellow)
+            };
+            return paints[index % paints.Length];
+        }
+        //
+        //
+        //
         private void HomePage_Load(object sender, EventArgs e)
         {
 

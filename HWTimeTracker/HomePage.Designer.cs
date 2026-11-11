@@ -30,6 +30,7 @@
         {
             Timers = new Button();
             timerLogs = new DataGridView();
+            cartesianChart = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
             ClassnameColumn = new DataGridViewTextBoxColumn();
             StartTimeColumn = new DataGridViewTextBoxColumn();
             StopTimeColumn = new DataGridViewTextBoxColumn();
@@ -64,6 +65,14 @@
             timerLogs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             timerLogs.Size = new Size(900, 400);
             timerLogs.TabIndex = 6;
+            //
+            // CartesianChart
+            //
+            cartesianChart.Location = new Point(10, 80);
+            cartesianChart.Size = new Size(700, 330);
+            cartesianChart.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            cartesianChart.Name = "cartesianChart";
+            cartesianChart.TabIndex = 7;
             // 
             // ClassnameColumn
             // 
@@ -105,6 +114,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
+            Controls.Add(cartesianChart);
             Controls.Add(timerLogs);
             Controls.Add(Timers);
             Name = "HomePage";
@@ -116,6 +126,7 @@
 
         #endregion
 
+        private LiveChartsCore.SkiaSharpView.WinForms.CartesianChart cartesianChart;
         private Button Timers;
         private DataGridView timerLogs;
         private DataGridViewTextBoxColumn ClassnameColumn;

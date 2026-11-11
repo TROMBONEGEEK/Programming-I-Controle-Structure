@@ -43,9 +43,6 @@ namespace Names
             displayTimer.Tick += DisplayTimer_Tick;
             displayTimer.Start();
         }
-
-
-
         //
         //
         //
@@ -60,9 +57,6 @@ namespace Names
                 WindowState = FormWindowState.Minimized;
             }
         }
-
-
-
         //
         //
         //
@@ -70,9 +64,6 @@ namespace Names
         {
             Close();
         }
-
-
-
         //
         //
         //
@@ -92,9 +83,6 @@ namespace Names
                 }
             }
         }
-
-
-
         //
         //
         //
@@ -106,7 +94,7 @@ namespace Names
                 classPanel.BackColor = Color.FromArgb(50, 50, 50);
                 classPanel.Padding = new Padding(5);
                 classPanel.Size = new Size(350, 100);
-
+                
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatches[className] = stopwatch;
                 Label timeLabel = new Label
@@ -118,9 +106,6 @@ namespace Names
                     BackColor = Color.Transparent,
                     Margin = new Padding(10)
                 };
-
-
-
                 //
                 //
                 //
@@ -131,9 +116,6 @@ namespace Names
                     Location = new Point(10, 45),
                     Text = "Start"
                 };
-
-
-
                 //
                 // Start Button Starts The Stopwatch and Inserts Data Into The Database
                 //
@@ -175,10 +157,8 @@ namespace Names
                     timeDataIds[className] = id;
 
                     loadLogs.LoadLogs();
+                    loadLogs.LoadChart();
                 };
-
-
-
                 //
                 // Stop Button Stops The Stopwatch and Inserts Data Into The Database
                 //
@@ -189,7 +169,7 @@ namespace Names
                     Location = new Point(95, 45),
                     Text = "Stop"
                 };
-
+                // Stop Button Click Event Handler
                 stopButton.Click += (sender, e) =>
                 {
                     stopwatches[className].Stop();
@@ -209,8 +189,9 @@ namespace Names
                     command.ExecuteNonQuery();
 
                     loadLogs.LoadLogs();
+                    loadLogs.LoadChart();
                 };
-
+                // Add the timeLabel to the classTimersPanel and store it in the timeLabels dictionary
                 timeLabels[className] = timeLabel;
                 timeLabel.Location = new Point(10, 10);
 
@@ -222,9 +203,6 @@ namespace Names
                 classPanel.Controls.Add(stopButton);
             }
         }
-
-
-
         //
         //
         //

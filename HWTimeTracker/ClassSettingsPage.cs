@@ -108,8 +108,10 @@ namespace Names
                         dataConnection.Open();
                         using var dropTableCommand = dataConnection.CreateCommand();
                         dropTableCommand.CommandText = "DROP TABLE IF EXISTS ClassData";
+                        MessageBox.Show($"Class data for {listBox1.SelectedItem} deleted.");
                         dropTableCommand.ExecuteNonQuery();
                         dataConnection.Close();
+
                     }
                     else
                     {

@@ -34,12 +34,11 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.AppWorkspace;
-            BorderStyle = BorderStyle.Fixed3D;
+            BackColor = SystemColors.ControlDarkDark;
+            BorderStyle = BorderStyle.FixedSingle;
             Name = "AppearanceSettingsPage";
-            Size = new Size(582, 287);
+            Size = new Size(584, 289);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

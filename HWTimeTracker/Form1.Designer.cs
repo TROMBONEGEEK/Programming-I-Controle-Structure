@@ -39,12 +39,13 @@
             // 
             // navigationPanel
             // 
-            navigationPanel.BackColor = SystemColors.ActiveCaption;
-            navigationPanel.BorderStyle = BorderStyle.FixedSingle;
+            navigationPanel.AccessibleRole = AccessibleRole.MenuBar;
+            navigationPanel.BackColor = Color.DarkGray;
             navigationPanel.Controls.Add(homeButton);
             navigationPanel.Controls.Add(classesButton);
             navigationPanel.Controls.Add(appearanceButton);
             navigationPanel.Dock = DockStyle.Left;
+            navigationPanel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             navigationPanel.Location = new Point(0, 0);
             navigationPanel.Name = "navigationPanel";
             navigationPanel.Size = new Size(250, 1033);
@@ -53,6 +54,8 @@
             // homeButton
             // 
             homeButton.BackColor = Color.DarkOrange;
+            homeButton.FlatStyle = FlatStyle.Popup;
+            homeButton.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Bold);
             homeButton.Location = new Point(-2, -2);
             homeButton.Name = "homeButton";
             homeButton.Size = new Size(250, 40);
@@ -64,6 +67,8 @@
             // classesButton
             // 
             classesButton.BackColor = Color.DarkOrange;
+            classesButton.FlatStyle = FlatStyle.Popup;
+            classesButton.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Bold);
             classesButton.Location = new Point(-2, 44);
             classesButton.Name = "classesButton";
             classesButton.Size = new Size(250, 40);
@@ -75,6 +80,8 @@
             // appearanceButton
             // 
             appearanceButton.BackColor = Color.DarkOrange;
+            appearanceButton.FlatStyle = FlatStyle.Popup;
+            appearanceButton.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Bold);
             appearanceButton.Location = new Point(-2, 90);
             appearanceButton.Name = "appearanceButton";
             appearanceButton.Size = new Size(250, 40);
@@ -85,7 +92,8 @@
             // 
             // pagePanel
             // 
-            pagePanel.BackColor = SystemColors.Control;
+            pagePanel.BackColor = SystemColors.ControlDarkDark;
+            pagePanel.BorderStyle = BorderStyle.FixedSingle;
             pagePanel.Dock = DockStyle.Fill;
             pagePanel.Location = new Point(250, 0);
             pagePanel.Name = "pagePanel";

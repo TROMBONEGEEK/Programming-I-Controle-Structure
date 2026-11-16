@@ -37,20 +37,21 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(44, 38);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.BackColor = SystemColors.MenuBar;
+            textBox1.Location = new Point(25, 25);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(110, 23);
+            textBox1.Size = new Size(275, 27);
             textBox1.TabIndex = 0;
             textBox1.KeyDown += textBox1_KeyDown;
             // 
             // listBox1
             // 
+            listBox1.BackColor = SystemColors.MenuBar;
+            listBox1.BorderStyle = BorderStyle.FixedSingle;
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(162, 65);
-            listBox1.Margin = new Padding(3, 2, 3, 2);
+            listBox1.Location = new Point(25, 101);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(287, 259);
+            listBox1.Size = new Size(275, 282);
             listBox1.TabIndex = 1;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -60,39 +61,40 @@
             // 
             // class1
             // 
-            class1.Location = new Point(44, 76);
-            class1.Margin = new Padding(3, 2, 3, 2);
+            class1.BackColor = Color.DeepSkyBlue;
+            class1.FlatStyle = FlatStyle.Popup;
+            class1.Location = new Point(25, 62);
             class1.Name = "class1";
-            class1.Size = new Size(82, 22);
+            class1.Size = new Size(94, 29);
             class1.TabIndex = 21;
             class1.Text = "Enter";
-            class1.UseVisualStyleBackColor = true;
+            class1.UseVisualStyleBackColor = false;
             class1.Click += btnAdd_Click;
             // 
             // delete1
             // 
-            delete1.Location = new Point(211, 37);
-            delete1.Margin = new Padding(3, 2, 3, 2);
+            delete1.BackColor = Color.IndianRed;
+            delete1.FlatStyle = FlatStyle.Popup;
+            delete1.Location = new Point(25, 395);
             delete1.Name = "delete1";
-            delete1.Size = new Size(82, 22);
+            delete1.Size = new Size(94, 29);
             delete1.TabIndex = 31;
             delete1.Text = "Delete";
-            delete1.UseVisualStyleBackColor = true;
+            delete1.UseVisualStyleBackColor = false;
             delete1.Click += delete1_Click;
             // 
             // ClassSettingsPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.AppWorkspace;
+            BackColor = Color.DimGray;
             BorderStyle = BorderStyle.Fixed3D;
             Controls.Add(class1);
             Controls.Add(listBox1);
             Controls.Add(delete1);
             Controls.Add(textBox1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "ClassSettingsPage";
-            Size = new Size(1446, 775);
+            Size = new Size(1653, 1033);
             ResumeLayout(false);
             PerformLayout();
         }

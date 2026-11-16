@@ -59,5 +59,15 @@ namespace Names.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2026_11_11_121530 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2026-11-11 121530", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

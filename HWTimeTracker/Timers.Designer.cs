@@ -65,8 +65,8 @@ namespace Names
             // 
             // classTimersPanel
             // 
+            classTimersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             classTimersPanel.AutoScroll = true;
-            classTimersPanel.Dock = DockStyle.Left;
             classTimersPanel.FlowDirection = FlowDirection.TopDown;
             classTimersPanel.Location = new Point(0, 0);
             classTimersPanel.Name = "classTimersPanel";
@@ -78,7 +78,7 @@ namespace Names
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = SystemColors.MenuText;
             ClientSize = new Size(500, 350);
             Controls.Add(classTimersPanel);
             Controls.Add(Minamize);

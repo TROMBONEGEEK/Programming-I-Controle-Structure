@@ -12,12 +12,11 @@ namespace Names
 {
     public partial class ClassSettingsPage : UserControl
     {
-        //
-        //
-        //
-        public ClassSettingsPage()
+        private readonly HomePage loadLogs;
+        public ClassSettingsPage(HomePage homePage)
         {
             InitializeComponent();
+
             using var connection = new SqliteConnection("Data Source=Classes.db");
             connection.Open();
 
@@ -34,6 +33,8 @@ namespace Names
                 listBox1.Items.Add(reader["Name"].ToString());
             }
             connection.Close();
+            // Store the reference to the HomePage instance
+            loadLogs = homePage;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,32 +92,34 @@ namespace Names
             {
                 if (MessageBox.Show("Are you sure you want to delete this class?","Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    // Delete the data associated with the class from TimeData.db
+                    string className = listBox1.SelectedItem.ToString();
+
+                    using var dataconnection = new SqliteConnection("Data Source=Classes.db");
+                    dataconnection.Open();
+
+                    using var dataConnection = new SqliteConnection($"Data Source=TimeData.db");
+                    dataConnection.Open();
+
+                    using var deleteDataCommand = dataConnection.CreateCommand();
+                    deleteDataCommand.CommandText = "DELETE FROM TimeData WHERE ClassName = @Name";
+                    deleteDataCommand.Parameters.AddWithValue("@Name", className);
+                    deleteDataCommand.ExecuteNonQuery();
+
+                    // Delete the class from Classes.db
+
                     using var connection = new SqliteConnection("Data Source=Classes.db");
                     connection.Open();
 
                     using var command = connection.CreateCommand();
                     command.CommandText = "DELETE FROM Classes WHERE Name = @name";
-                    command.Parameters.AddWithValue("@name", listBox1.SelectedItem);
-                    listBox1.Items.Remove(listBox1.SelectedItem);
+                    command.Parameters.AddWithValue("@name", className);
                     command.ExecuteNonQuery();
 
-                    listBox1.Items.Remove(listBox1.SelectedItem);
+                    listBox1.Items.Remove(className);
 
-                    if (MessageBox.Show("Do you want to delete the class data as well?", "Delete Class Data", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        using var dataConnection = new SqliteConnection($"Data Source={listBox1.SelectedItem}.db");
-                        dataConnection.Open();
-                        using var dropTableCommand = dataConnection.CreateCommand();
-                        dropTableCommand.CommandText = "DROP TABLE IF EXISTS ClassData";
-                        MessageBox.Show($"Class data for {listBox1.SelectedItem} deleted.");
-                        dropTableCommand.ExecuteNonQuery();
-                        dataConnection.Close();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Class deleted without deleting class data.");
-                    }
+                    loadLogs.LoadLogs();
+                    loadLogs.LoadChart();
                 }
             }
         }

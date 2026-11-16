@@ -19,6 +19,7 @@ namespace Names
 {
     public partial class HomePage : UserControl
     {
+        private readonly ClassSettingsPage? classSettingsPage;
         private Timers? timersWindow;
         public HomePage()
         {

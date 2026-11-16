@@ -32,7 +32,9 @@ namespace Names
             LoadClasses();
 
             StartPosition = FormStartPosition.Manual;
-            Rectangle screenArea = Screen.PrimaryScreen.WorkingArea;
+            Rectangle screenArea = Screen.FromControl(this).WorkingArea;
+            Width = Math.Min(500, screenArea.Width);
+            Height = Math.Min(350, screenArea.Height);
             Location = new Point(
                 screenArea.Right - Width,
                 screenArea.Bottom - Height
@@ -93,18 +95,21 @@ namespace Names
                 Panel classPanel = new Panel();
                 classPanel.BackColor = Color.FromArgb(50, 50, 50);
                 classPanel.Padding = new Padding(5);
-                classPanel.Size = new Size(350, 100);
-                
+                classPanel.Size = new Size(360, 100);
+
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatches[className] = stopwatch;
                 Label timeLabel = new Label
                 {
                     Text = $"{className}: 00:00:00",
-                    AutoSize = true,
-                    Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point),
+                    AutoSize = false,
+                    Width = 250,
+                    Size = new Size(250, 45),
+                    Location = new Point(5, 5),
+                    Font = new Font("Segoe UI", 12F),
                     ForeColor = Color.White,
                     BackColor = Color.Transparent,
-                    Margin = new Padding(10)
+                    Margin = new Padding(0)
                 };
                 //
                 //
@@ -113,7 +118,8 @@ namespace Names
                 {
                     Name = "startButton",
                     Size = new Size(75, 30),
-                    Location = new Point(10, 45),
+                    Location = new Point(10, 60),
+                    BackColor = Color.FromArgb(0, 255, 0),
                     Text = "Start"
                 };
                 //
@@ -166,7 +172,8 @@ namespace Names
                 {
                     Name = "stopbutton",
                     Size = new Size(75, 30),
-                    Location = new Point(95, 45),
+                    Location = new Point(95, 60),
+                    BackColor = Color.FromArgb(255, 0, 0),
                     Text = "Stop"
                 };
                 // Stop Button Click Event Handler

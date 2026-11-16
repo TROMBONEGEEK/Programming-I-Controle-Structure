@@ -23,7 +23,8 @@ namespace Names
 
         private void classesButton_Click(object sender, EventArgs e)
         {
-            settings ??= new ClassSettingsPage();
+            home ??= new HomePage();
+            settings ??= new ClassSettingsPage(home);
             ShowPage(settings);
         }
 
